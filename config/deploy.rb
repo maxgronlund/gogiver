@@ -21,7 +21,7 @@ set :use_sudo, false
 
 # repo details
 set :scm , :git
-set :repository, "git@github.com:maxgronlund/rails-template.git"  # <<< change reposotory
+set :repository, "git@github.com:maxgronlund/gogiver.git"  # <<< change reposotory
 set :branch, "master"
 set :git_enable_submodules, 1
 

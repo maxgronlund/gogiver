@@ -18,7 +18,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: coachpartners_development
+  database: gogiver_development
   pool: 5
   username: root
   password:
@@ -31,7 +31,7 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: coachpartners_test
+  database: gogiver_test
   pool: 5
   username: root
   password:
@@ -41,7 +41,7 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: coachpartners_production
+  database: gogiver_production
   pool: 5
   username: root
   password: 
