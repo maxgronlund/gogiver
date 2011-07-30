@@ -6,10 +6,9 @@
     = f.input :email
     = f.input :password
     = f.input :password_confirmation
-    - if current_user && current_user.super?
-         = f.check_box :grid
-         = t('activerecord.attributes.user.grid')
-    - if current_user && current_user.admin_or_super?
+    - if can_edit?
+      = f.check_box :grid
+      = t('activerecord.attributes.user.grid')
       = f.input :role , :include_blank => false, :collection => User::ROLES unless @user.is_first_user?
     .actions
       = f.submit t('system.save')
@@ -35,26 +34,13 @@
     = f.hidden_field :image_cache
     
     - if @user.image.present?
-      br
       .field
         = f.check_box :remove_image
         = t('image.remove_image')
       .field
 
     
-  
-
-  - if @user.image.present?
-    br
-    .field
-      = f.check_box :remove_image
-      = t('image.remove_image')
-  .field
-    - if current_user && current_user.super?
-         = f.check_box :grid
-         = t('activerecord.attributes.user.grid')
-  
-
+ 
 
 
 
