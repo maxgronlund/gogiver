@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   
   has_many :key_values
   has_many :life_arrays
+  has_many :helps
   
   # Avatar image
   attr_accessible :image, :image_cache, :remote_image_url, :remove_image

@@ -6,8 +6,8 @@ class Ability
       if user.super?
         can :manage, :all
       elsif user.admin?
-    
         can :manage, Goal
+        can :manage, Help
         can :manage, KetValue
         can :manage, LifeArray
         can :manage, TextContent
@@ -18,6 +18,7 @@ class Ability
         can :manage, KeyValue, user_id => user.id
         can :manage, LifeArray, :user_id => user.id
         can :manage, User, :user_id => user.id
+        can :read, Help
       end
     # When not logged in
     else

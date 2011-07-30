@@ -1,0 +1,20 @@
+hr
+  h3 Admin help
+
+
+
+- @all_helps.each do |help|
+  div class="grid-3 alpha omega #{cycle('row-flip', 'row-flop')}"
+    .grid-2.alpha
+      = link_to help.title, help
+    .grid-1.omega
+      = link_to 'Edit', edit_help_path(help)
+      | | 
+      = link_to 'Destroy', help, :confirm => 'Are you sure?', :method => :delete
+
+
+.edit
+  = link_to 'New Help', new_user_help_path(@user), class: 'fancy'
+
+
+

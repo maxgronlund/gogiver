@@ -1,6 +1,7 @@
 Gogiver::Application.routes.draw do
 
 
+  resources :helps
   resources :actions
   resources :goals
   resources :life_arrays
@@ -30,7 +31,8 @@ Gogiver::Application.routes.draw do
       put 'crop_update'
     end
     resources :key_values,
-              :life_arrays
+              :life_arrays,
+              :helps
   end
 
   

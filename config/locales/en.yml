@@ -38,6 +38,7 @@ en:
   page:
     admin: "admin"
     home: "home"
+    help: "help"
 
   session:
     log_in: "log in"
@@ -60,6 +61,7 @@ en:
     show_all: 'show all'
     site_management: 'site management'
     user_management: 'user management'
+    new: 'new'
     
     
   text_contents:

@@ -4,33 +4,34 @@
 
 
 .grid-3
+  - if can? :manage , @user
+    .edit
+      = link_to t('image.re_crop'), crop_user_path(@user, :version => :medium) if @user.image?
+  = image_tag(@user.image_url :medium) if @user.image?
 
-  = image_tag(@user.image_url :large) if @user.image?
-  = link_to t('image.re_crop'), crop_user_path(@user, :version => :large) if @user.image?
 
   br
-  = @user.email
   - if can?(:manage, @user)
-    br
-    = link_to t('system.edit'), edit_user_path(@user), class: 'fancy'
+
+    .edit
+      = link_to t('system.edit'), edit_user_path(@user), class: 'fancy'
 
 
-.grid-6
+.grid-5.suffix-1
   = render 'shared/slogan' , :slogan => @user.slogan
   = render 'shared/greatful' , :grateful => @user.grateful
   = render 'shared/key_values' , :key_values => @user.key_values 
   = render 'shared/life_arrays' , :life_arrays => @user.life_arrays
   
- 
-
-
-
-
-
 
 
 .grid-3
-  | rigth column
+  = render 'shared/help'
+
+  - if can? :manage, Help
+    = render 'admin_helps'
+
+
 
 
 

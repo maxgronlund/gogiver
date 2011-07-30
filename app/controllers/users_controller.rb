@@ -14,9 +14,15 @@ class UsersController < InheritedResources::Base
 
   def show
     return_path user_path  # !!! perhaps a system vide helper ?
+    @helps = Help.profile
+    @all_helps = Help.all
     show!
   end
   
+  def edit
+    @helps = Help.slogan
+    edit!
+  end
   
   
   def create
@@ -35,7 +41,7 @@ class UsersController < InheritedResources::Base
   
   
   def crop
-    @crop_version = (params[:version] || :large).to_sym
+    @crop_version = (params[:version] || :medium).to_sym
     @user.get_crop_version! @crop_version
     @version_geometry_width, @version_geometry_height = AvatarUploader.version_dimensions[@crop_version]
   end

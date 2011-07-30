@@ -1,0 +1,10 @@
+= simple_form_for [@user, @help], :validate => true do |f|
+  = render 'shared/error_messages', :taget => @help
+
+
+  = f.input  :title
+  = f.input :body
+  = f.input :help_type , :include_blank => false, :collection => Help::TYPE
+  -#= f.input :user
+  .actions
+    = f.submit 'Save'

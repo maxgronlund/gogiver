@@ -30,6 +30,8 @@ rails g migration AddRequirementToGoal requirement:text resistance:text support:
 
 rails generate scaffold action title:string due_date:datetime goal:belongs_to
 
+rails generate scaffold help title:string body:text user:belongs_to
+
 
 
 

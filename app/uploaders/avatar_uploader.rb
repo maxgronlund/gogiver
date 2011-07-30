@@ -26,11 +26,9 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # Create different versions of your uploaded files:  
   cattr_accessor :version_dimensions
   self.version_dimensions = {
-    :xsmall => [32, 36],
-    :small => [66, 72],
-    :medium => [152, 170],
-    :large => [238, 266],
-    :xlarge => [324, 358],
+    :small => [86, 114],
+    :medium => [300, 400]
+
   }
 
   RESIZE_GRAVITY = 'NorthWest'

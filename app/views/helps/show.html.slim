@@ -1,0 +1,13 @@
+.grid-12
+  h1 = @help.title
+  = image_tag(@help.user.image_url :small) if @help.user.image?
+
+  br
+  = @help.help_type
+  = @help.body
+  
+  
+  br
+  - if can? :manage , Help
+    = link_to 'Edit', edit_help_path(@help), class: 'fancy'
+

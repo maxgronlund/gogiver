@@ -34,8 +34,13 @@ a, a:hover, a:active, a:visited, a:link {
   color: $link-color;
   text-decoration: none;
   &.fancy {
-		@include fancy-button($template-color-base, 14px 0.5em);
+		@include fancy-button($color_red_algae, 14px 0.5em);
 	}
+}
+
+h1, h2, h3, h4, h5, h6{
+	margin-top:0px;
+//	font-size:16px;
 }
 
 
@@ -150,7 +155,7 @@ a, a:hover, a:active, a:visited, a:link {
 
 
 
-.body-color{ @include body-color;}
+.body-color{ @include content-color;}
 .content-color{ @include content-color;}
 
 .notice{
