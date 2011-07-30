@@ -1,23 +1,23 @@
 class UsersController < InheritedResources::Base  
-#  has_scope :page, :default => 1
+  has_scope :page, :default => 1
   load_and_authorize_resource
-
   helper_method :sort_column, :sort_direction
-
+  uses_tiny_mce :only => [:new, :create, :edit, :update]
   
   def index
-    @menu='admin'
     return_path users_path # !!! same as line 10?
 #    @is_first_user = User.first.id == 1
-    session[:go_to_after_edit] = users_path
+#    session[:go_to_after_edit] = users_path
     @users = User.search(params[:search]).order(sort_column + " " + sort_direction).page(params[:page]).per(25)
+    @menu='admin'
   end
 
   def show
     return_path user_path  # !!! perhaps a system vide helper ?
     show!
   end
-
+  
+  
   
   def create
     @user = User.new(params[:user])  
@@ -31,6 +31,7 @@ class UsersController < InheritedResources::Base
       render "new"  
     end  
   end  
+
   
   
   def crop

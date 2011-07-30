@@ -9,6 +9,7 @@ en:
       text_content: "text content"
 
     attributes:
+
       goal:
         title: "goal"
         body: "what is the purpose with the goal"
@@ -68,6 +69,7 @@ en:
     text_contents: 'text content'
     search: 'search title'
 
+
   date:
      # See http://www.dsn.dk/oss_faq.htm#datoer and http://en.wikipedia.org/wiki/Date_formats
      # either use traditional (2.10.03, 2. oktober 2003): "%e.%m.%y", "%e. %B %Y"
@@ -79,6 +81,7 @@ en:
        long: "%e. %B %Y"
   goal:
     purpose: "the purpose of the goal is"
+
   user:
     all_users: 'all users'
     create_user: 'create user'

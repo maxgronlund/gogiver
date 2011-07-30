@@ -8,6 +8,7 @@ $color_calcium: #E9EAE6;
 $color_red_algae: #B64D62;
 
 
+
 // set link color
 $link-color: $color_red_algae;
 
@@ -26,6 +27,7 @@ $template-background-color-base: white;
 @mixin banner-color($color: $color_north_sea, $color-mix: 100){
 	
 }
+
 @mixin template-color($color: $template-color-base, $color-mix: 100, $background-color: $template-background-color-base, $background-color-mix: 100) {
   color: mix($color, white, $color-mix);
 /*  background-color: mix($background-color, white, $background-color-mix);*/
@@ -44,7 +46,6 @@ $template-background-color-base: white;
 }
 
 @mixin back-color($color: $color_north_sea, $color-mix: 100){
-
 	background-color:mix($color, white, $color-mix);
 }
 

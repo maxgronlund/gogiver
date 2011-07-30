@@ -14,11 +14,7 @@ class ApplicationController < ActionController::Base
   end
   
   def after_sign_in_path_for(resource)
-    if current_user.admin_or_super?
-      admin_index_path
-    else
       user_path(resource)
-    end
   end
 
 end

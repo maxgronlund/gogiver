@@ -8,9 +8,6 @@
   = image_tag(@user.image_url :large) if @user.image?
   = link_to t('image.re_crop'), crop_user_path(@user, :version => :large) if @user.image?
 
-  br /
-  = t('system.email')
-  ':
   br
   = @user.email
   - if can?(:manage, @user)
@@ -34,4 +31,7 @@
 
 .grid-3
   | rigth column
+
+
+
 

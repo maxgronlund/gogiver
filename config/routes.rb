@@ -5,11 +5,12 @@ Gogiver::Application.routes.draw do
   resources :goals
   resources :life_arrays
 
+  devise_for :users
 
   get "no_access/index"
   get "admin/index"
  
-  devise_for :users
+
 
   root :to => "home#index"
   
@@ -23,7 +24,6 @@ Gogiver::Application.routes.draw do
     resources :actions
   end
             
-
   resources :users do
     member do
       get 'crop'
@@ -32,6 +32,7 @@ Gogiver::Application.routes.draw do
     resources :key_values,
               :life_arrays
   end
+
   
 #  get "home/index"
   root :to => "home#index"
