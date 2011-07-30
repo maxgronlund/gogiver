@@ -1,4 +1,4 @@
-RailsTemplateR31::Application.routes.draw do
+Gogiver::Application.routes.draw do
 
 
   resources :actions
