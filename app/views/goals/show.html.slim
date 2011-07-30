@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  b Title:
+  = @goal.title
+p
+  b Body:
+  = @goal.body
+p
+  b Accomplished:
+  = @goal.accomplished
+p
+  b Due date:
+  = @goal.due_date
+p
+  b Life array:
+  = @goal.life_array
+
+= link_to 'Edit', edit_goal_path(@goal)
+'|
+= link_to 'Back', goals_path

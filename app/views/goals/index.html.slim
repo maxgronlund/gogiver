@@ -1,0 +1,18 @@
+h1 Listing goals
+
+
+
+- @goals.each do |goal|
+
+  = goal.title
+  = goal.body
+  = goal.accomplished
+  = goal.due_date
+  = goal.life_array
+  = link_to 'Show', goal
+  = link_to 'Edit', edit_goal_path(goal)
+  = link_to 'Destroy', goal, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Goal', new_life_array_goal_path(@life_array)

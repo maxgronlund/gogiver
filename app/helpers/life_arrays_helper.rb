@@ -1,0 +1,2 @@
+module LifeArraysHelper
+end

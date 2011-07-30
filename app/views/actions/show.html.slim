@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  b Title:
+  = @action.title
+p
+  b Due date:
+  = @action.due_date
+p
+  b Goal:
+  = @action.goal
+p
+  b Done:
+  = @action.done
+
+= link_to 'Edit', edit_action_path(@action)
+'|
+= link_to 'Back', actions_path

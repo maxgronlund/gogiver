@@ -1,0 +1,25 @@
+h1 Listing actions
+
+table
+  tr
+    th Title
+    th Due date
+    th Goal
+    th Done
+    th
+    th
+    th
+
+  - @actions.each do |action|
+    tr
+      td= action.title
+      td= action.due_date
+      td= action.goal
+      td= action.done
+      td= link_to 'Show', action
+      td= link_to 'Edit', edit_action_path(action)
+      td= link_to 'Destroy', action, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Action', new_action_path

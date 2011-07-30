@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  body: MyText
+  accomplished: false
+  due_date: 2011-07-01 06:28:35
+  life_array: 
+
+two:
+  title: MyString
+  body: MyText
+  accomplished: false
+  due_date: 2011-07-01 06:28:35
+  life_array: 

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  due_date: 2011-07-01 14:27:31
+  goal: 
+  done: false
+
+two:
+  title: MyString
+  due_date: 2011-07-01 14:27:31
+  goal: 
+  done: false

@@ -1,0 +1,16 @@
+h3 Key values
+
+- key_values.each do |key_value|
+  .border-box
+    .inner-box
+      h4 = key_value.title
+      = markdown(key_value.body)
+      - if can?(:manage, @user)
+        .edit
+          = link_to t('system.edit'), edit_user_key_value_path(@user,key_value)
+          | | 
+          = link_to t('system.delete'), user_key_value_path(@user,key_value), :confirm => 'Are you sure?', :method => :delete
+
+- if can?(:manage, @user)
+    .edit
+      = link_to 'new keyvalue' , new_user_key_value_path(@user)

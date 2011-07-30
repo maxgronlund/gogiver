@@ -1,0 +1,44 @@
+= form_for [@life_array, @goal], :validate => true do |f|
+  = render 'shared/error_messages', :taget => @goal
+
+
+  .field
+    = f.label :title
+    = f.text_field :title, :size => 66
+  .field
+    = f.label :body
+    = f.text_area :body, :rows =>6, :cols => 57
+
+  .field
+    = f.label :requirement
+    = f.text_area :requirement, :rows =>6, :cols => 57
+
+  .field
+    = f.label :resistance
+    = f.text_area :resistance, :rows =>6, :cols => 57
+
+  .field
+    = f.label :support
+    = f.text_area :support, :rows =>6, :cols => 57
+
+  .field
+      = f.label :short_term_strategy
+      = f.text_area :short_term_strategy, :rows =>6, :cols => 57
+
+  .field
+    = f.label :long_term_strategy
+    = f.text_area :long_term_strategy, :rows =>6, :cols => 57
+
+  .field
+    = f.label :pay_back
+    = f.text_area :pay_back, :rows =>6, :cols => 57
+
+  .field
+    = f.label :accomplished
+    = f.check_box :accomplished
+  .field
+    = f.label :due_date
+    = f.datetime_select :due_date
+
+  .actions
+    = f.submit 'Save'

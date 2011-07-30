@@ -1,0 +1,154 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require kontrapunkt
+ *= require normalize
+ *= require clearfix
+ *= require grid
+ *= require_self
+ * require_tree . 
+ *= require_directory . 
+*/
+
+@import "compass/css3";
+@import "compass/css3/border-radius";
+@import "compass/css3/opacity";
+@import "partials/color";
+@import "partials/font";
+@import "partials/dimentions";
+@import "partials/fancy-buttons";
+
+
+body{
+
+
+
+  margin:0px;
+  @include font-plain;
+
+}
+
+// set link color
+a, a:hover, a:active, a:visited, a:link {
+  //@include link-font;
+  color: $link-color;
+  text-decoration: none;
+  &.fancy {
+		@include fancy-button($template-color-base, 14px 0.5em);
+	}
+}
+
+
+
+/* JCrop preview */
+.preview {
+    width:100px;
+    height:100px;
+    overflow:hidden;
+}
+
+
+.row-flip
+{
+	background-color:#ddd;
+}
+
+.row-flop
+{
+	background-color:#ccc;
+}
+
+.sort-list-header {
+	background-color:#aaa;
+	color:#000;
+	.asc {
+		padding-right:20px;
+		background-image:url('arrow_down.png');
+		background-repeat:no-repeat;
+		background-color:transparent;
+		background-position:right top;
+	}
+	.desc {
+		padding-right:20px;
+		background-image:url('arrow_up.png');
+		background-repeat:no-repeat;
+		background-color:transparent;
+		background-position:right top;
+	}
+}
+
+/* FIXME where is this used? */
+.current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+/* FIXME where is this used? */
+.edit{
+	text-align:right;
+}
+
+/* FIXME should these be in a context? and different colors? */
+.notice, .alert{
+	color:#f00;
+}
+
+
+.field{
+	@include input_top_margin;
+}
+
+
+.border-box{
+	@include border-radius(5px, 5px);
+	background-color:#eee;
+	border-style:solid;
+	border-width:1px;
+	border-color:#888;
+	margin-bottom:12px;
+	margin-top:4px;
+}
+
+.border-box:hover{
+	background-color:#e0e0e0;
+}
+.inner-box{
+	margin:10px;
+	h4{
+		color:$color_red_algae;
+	}
+	p{
+		margin-bottom:10px;
+	}	
+}
+
+.avatar-box{
+	@include border-radius(5px, 5px);
+	background-color:#eee;
+	border-style:solid;
+	border-width:1px;
+	border-color:#555;
+	width:150px;
+	height:170px;
+	display:block;
+	overflow:hidden;
+}
+
+.avatar-box:hover{
+	@include opacity(0.9);
+}
+
+// some basic styles using fonts and color schee
+.label{
+	@include input_top_margin;
+}
+
+
+.headline { @include template-color; @include font-header; }
+
+
+.body-color{ @include body-color;}
+.content-color{ @include content-color;}
+

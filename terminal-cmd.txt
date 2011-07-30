@@ -1,0 +1,35 @@
+
+
+rails g scaffold key_value title:string body:text user:belongs_to
+
+rails g scaffold life_array title:string body:text user:belongs_to
+
+rails g scaffold goal title:string body:text accomplished:boolean due_date:datetime life_array:belongs_to 
+
+# product
+rails g scaffold product product_nr:string title:string body:text price:integer
+
+
+# global colors and sizes to select from          
+rails g scaffold product_size title:string
+rails g scaffold product_color title:string
+   
+# join tables  
+rails g migration categories_products category:belongs_to product:belongs_to  << is the two last arguments nesesarry
+rails g migration product_product_color product:belongs_to product_color:belongs_to
+rails g migration product_product_size product:belongs_to product_size:belongs_to
+
+rails g migration AddSloganToUser slogan:text
+
+rails g migration AddGratefulToUser grateful:text
+
+rails g migration AddShortTermStrategyToGoal short_term_strategy:text long_term_strategy:text
+
+rails g migration AddRequirementToGoal requirement:text resistance:text support:text pay_back:text
+
+
+rails generate scaffold action title:string due_date:datetime goal:belongs_to
+
+
+
+

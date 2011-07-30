@@ -1,0 +1,23 @@
+h1 Listing life_arrays
+
+table
+  tr
+    th Title
+    th Body
+    th User
+    th
+    th
+    th
+
+  - @life_arrays.each do |life_array|
+    tr
+      td= life_array.title
+      td= life_array.body
+      td= life_array.user
+      td= link_to 'Show', life_array
+      td= link_to 'Edit', edit_life_array_path(life_array)
+      td= link_to 'Destroy', life_array, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Life array', new_life_array_path

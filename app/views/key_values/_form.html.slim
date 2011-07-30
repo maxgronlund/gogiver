@@ -1,0 +1,12 @@
+= form_for [@user, @key_value], :validate => true do |f|
+  = render 'shared/error_messages', :taget => @key_value
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :body
+    = f.text_area :body
+  
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,23 @@
+h3 Life arrays
+
+- life_arrays.each do |life_array|
+  .border-box
+    .inner-box
+      h4 = life_array.title
+      = markdown(life_array.body)
+      - if life_array.goals.length == 1
+        | 1 goal
+      - else
+        = life_array.goals.length
+        |  goals        
+      .edit
+        = link_to t('system.show'), user_life_array_path(@user, life_array )
+        - if can?(:manage, @user)
+          | | 
+          = link_to t('system.edit'), edit_user_life_array_path(@user,life_array)
+          | | 
+          = link_to t('system.delete'), user_life_array_path(@user,life_array), :confirm => 'Are you sure?', :method => :delete
+
+- if can?(:manage, @user)
+    .edit
+      = link_to 'new lifearray' , new_user_life_array_path(@user)

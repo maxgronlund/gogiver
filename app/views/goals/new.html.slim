@@ -1,0 +1,22 @@
+.headline
+  h1 
+    = @goal.life_array.user.name
+  
+  
+.left-column-3
+
+  = image_tag(@goal.life_array.user.image_url :medium) if @goal.life_array.user.image?
+  br
+  p = @goal.life_array.user.email
+
+  br
+
+.center-column-6
+
+  = render 'form'
+ 
+.right-column-3
+
+
+.grid-12
+  = link_to 'Back', :back

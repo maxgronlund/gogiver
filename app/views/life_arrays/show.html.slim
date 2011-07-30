@@ -1,0 +1,35 @@
+.headline
+  h1 
+    = @user.name
+
+  
+.grid-3
+
+  = image_tag(@user.image_url :medium) if @user.image?
+  - if can?(:manage, @user)
+    br
+    = link_to t('system.edit'), edit_user_path(@user)
+    br
+  = @user.email
+
+  br
+
+
+.grid-6
+  .border-box
+    .inner-box
+      h4 = @life_array.title
+      = markdown(@life_array.body)
+      - if can?(:manage, @life_array)
+        .edit
+          = link_to t('system.edit'), edit_user_life_array_path(@life_array.user, @life_array)
+          | | 
+          = link_to t('system.delete'), user_life_array_path(@life_array.user,@life_array), :confirm => 'Are you sure?', :method => :delete
+
+  = render 'shared/goals' , :goals => @life_array.goals
+
+
+
+ 
+.grid-3
+
