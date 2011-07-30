@@ -39,17 +39,7 @@
         = t('image.remove_image')
       .field
 
-  .grid-3
-    = render 'shared/help'
--#    -  @helps.each do |help|
--#      .grid-1.alpha
--#        = image_tag(help.user.image_url :small) if help.user.image?
--#      .grid-2.omega
--#        h3 = help.title
--#        = help.body
--#        - if can? :manage, help
--#          = link_to t('system.edit'), edit_user_help_path(help.user, help)
--#      
-
+-#  .grid-3
+-#    = render 'shared/help'
 
   

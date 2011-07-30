@@ -14,10 +14,10 @@ class Ability
         
       elsif user.member?#ordinary user
     
-        can :manage, Goal, user_id => user.id
-        can :manage, KeyValue, user_id => user.id
-        can :manage, LifeArray, :user_id => user.id
-        can :manage, User, :user_id => user.id
+        can :manage, Goal, :id => user.id
+        can :manage, KeyValue, :id => user.id
+        can :manage, LifeArray, :id => user.id
+        can :manage, User, :id => user.id
         can :read, Help
       end
     # When not logged in
@@ -28,3 +28,4 @@ class Ability
     end
   end
 end
+

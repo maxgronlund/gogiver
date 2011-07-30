@@ -1,3 +1,4 @@
+# encoding: utf-8
 class UsersController < InheritedResources::Base  
   has_scope :page, :default => 1
   load_and_authorize_resource
@@ -23,12 +24,6 @@ class UsersController < InheritedResources::Base
     @helps = Help.slogan
     edit!
   end
-  
-  def new
-    @helps = Help.slogan
-    new!
-  end
-  
   
   def create
     
