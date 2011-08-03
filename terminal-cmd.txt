@@ -33,5 +33,7 @@ rails generate scaffold action title:string due_date:datetime goal:belongs_to
 rails generate scaffold help title:string body:text user:belongs_to
 
 
+rails g migration add_life_purpose_to_users life_purpose:text
+
 
 

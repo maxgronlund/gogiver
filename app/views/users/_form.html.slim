@@ -15,9 +15,11 @@
 
   .grid-6
     .field
+      = f.label :life_purpose
+      = f.text_area :life_purpose, :rows =>6, :cols => 46
+    .field
       = f.label :slogan
       = f.text_area :slogan, :rows =>6, :cols => 46
-    
     .field
       = f.label :grateful
       = f.text_area :grateful, :rows =>6, :cols => 46

@@ -18,6 +18,7 @@
 
 
 .grid-5.suffix-1
+  = render 'shared/life_purpose' , :life_purpose => @user.life_purpose
   = render 'shared/slogan' , :slogan => @user.slogan
   = render 'shared/greatful' , :grateful => @user.grateful
   = render 'shared/key_values' , :key_values => @user.key_values 

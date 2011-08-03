@@ -13,4 +13,5 @@ class Help < ActiveRecord::Base
   scope :edit_lifearray, where('help_type LIKE ?', "edit_lifearray")
   scope :profile, where('help_type LIKE ?', "profile")
   scope :edit_profile, where('help_type LIKE ?', "edit_profile")
+  scope :life_purpose, where('help_type LIKE ?', "life_purpose")
 end

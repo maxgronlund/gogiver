@@ -21,7 +21,8 @@ class UsersController < InheritedResources::Base
   end
   
   def edit
-    @helps = Help.slogan  || 'na'
+    @helps = Help.slogan
+    @life_purpose = Help.life_purpose
     #@all_helps = Help.all
     edit!
   end
