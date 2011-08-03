@@ -1,19 +1,36 @@
+#.grid-3.alpha.omega
+#  - @helps.each do |help|
+#    .grid-1.alpha
+#      = image_tag(help.user.image_url :small) if help.user.image?
+#    .grid-2.omega
+#      h3 = help.title
+#      = markdown help.body
+#      - if can? :manage, help
+#        br
+#        = link_to t('system.edit'), edit_user_help_path(help.user, help)
+#    .grid-3.alpha.omega
+#      hr
+#.grid-3.alpha.omega
+#  - if can? :manage, Help
+#    = render 'shared/admin_helps'
+#     
+#
+
+
 .grid-3.alpha.omega
   - @helps.each do |help|
-    .grid-1.alpha
-      = image_tag(help.user.image_url :small) if help.user.image?
-    .grid-2.omega
       h3 = help.title
       = markdown help.body
       - if can? :manage, help
         br
-        = link_to t('system.edit'), edit_user_help_path(help.user, help)
+        .edit
+          = link_to t('system.edit'), edit_user_help_path(help.user, help), class: 'fancy'
     .grid-3.alpha.omega
       hr
 .grid-3.alpha.omega
   - if can? :manage, Help
     = render 'shared/admin_helps'
-     
+
 
 
 
