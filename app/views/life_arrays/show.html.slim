@@ -26,10 +26,11 @@
           | | 
           = link_to t('system.delete'), user_life_array_path(@life_array.user,@life_array), :confirm => 'Are you sure?', :method => :delete
 
-  = render 'shared/goals' , :goals => @life_array.goals
 
 
+  .div id="theDiv"
+    = render 'goals' , :goals => @life_array.goals
 
- 
 .grid-3
+  = render 'testbox'
 

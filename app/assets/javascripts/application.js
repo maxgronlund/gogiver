@@ -11,3 +11,15 @@
 //= require_directory .
 //- require tiny_mce/tiny_mce
 //= require rails.validations
+
+$(function() {
+    $("#slideup").click(function() {
+        $("#theDiv").slideUp("normal");
+    });
+    $("#slidedown").click(function() {
+        $("#theDiv").slideDown("normal");
+    });
+    $("#toggle").click(function() {
+        $("#theDiv").slideToggle("slow");
+    });
+});

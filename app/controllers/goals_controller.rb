@@ -4,15 +4,15 @@ class GoalsController < InheritedResources::Base
   belongs_to :life_array , :optional => true
   
   def update
-    update! {user_life_array_path(@goal.life_array, @goal.life_array.user)}
+    update! {user_life_array_path(@goal.life_array.user, @goal.life_array)}
   end
   
   def create
-    create! {user_life_array_path(@goal.life_array, @goal.life_array.user)}
+    create! {user_life_array_path(@goal.life_array.user, @goal.life_array)}
   end
   
   def destroy
-    @go_to = user_life_array_path(@goal.life_array, @goal.life_array.user)
+    @go_to = user_life_array_path(@goal.life_array.user, @goal.life_array)
     destroy! {@go_to}
   end
   

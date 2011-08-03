@@ -82,7 +82,7 @@ en:
        short: "%e. %b. %Y"
        long: "%e. %B %Y"
   goal:
-    purpose: "the purpose of the goal is"
+    purpose: "the purpose of the goal is: "
 
   user:
     all_users: 'all users'
