@@ -36,9 +36,7 @@ Gogiver::Application.routes.draw do
   end
 
   
-  
-  
-  
+
 #  get "home/index"
   root :to => "home#index"
   
