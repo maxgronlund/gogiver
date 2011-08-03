@@ -24,7 +24,7 @@ gem 'devise'
 gem 'tiny_mce'
 gem 'simple_form'
 gem "nested_form", :git => "git://github.com/ryanb/nested_form.git"
-
+gem 'sprockets', '= 2.0.0.beta.10'
 
 
 # Use unicorn as the web server
