@@ -9,7 +9,11 @@
         br
         = link_to t('system.edit'), edit_user_help_path(help.user, help)
     .grid-3.alpha.omega
-         
+      hr
+
+  - if can? :manage, Help
+    = render 'shared/admin_helps'
+     
 
 
 
