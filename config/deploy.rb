@@ -49,6 +49,7 @@ end
 
 after 'deploy:update_code', 'deploy:symlink_shared'
 
+
 desc "Tail all or a single remote file"
 task :tail do
   ENV["LOGFILE"] ||= "*.log"
