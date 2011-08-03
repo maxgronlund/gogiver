@@ -25,6 +25,8 @@ en:
         identity: "identity"
         title: 'title'
         body: 'body'
+      help:
+        help_type: 'page where the help is shown'
         
 
   image:
