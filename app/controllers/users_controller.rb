@@ -14,7 +14,7 @@ class UsersController < InheritedResources::Base
   end
 
   def show
-    return_path user_path  # !!! perhaps a system vide helper ?
+    session[:go_to_after_edit] = user_path(@user)
     @helps = Help.profile
     @all_helps = Help.all
     show!
