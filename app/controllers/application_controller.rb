@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
   #!!! do i have to featch all this all the time?
   def get_site_info
     @menu = 'home'
+    
+    if user_signed_in? && current_user.admin_or_super?
+      @all_helps = Help.all
+    end
   end
 
 

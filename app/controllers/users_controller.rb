@@ -16,12 +16,13 @@ class UsersController < InheritedResources::Base
   def show
     session[:go_to_after_edit] = user_path(@user)
     @helps = Help.profile
-    @all_helps = Help.all
+    
     show!
   end
   
   def edit
-    @helps = Help.slogan
+    @helps = Help.slogan  || 'na'
+    #@all_helps = Help.all
     edit!
   end
   
