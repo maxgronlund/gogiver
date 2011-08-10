@@ -67,12 +67,14 @@ class UsersController < InheritedResources::Base
   end
   
   def update
+    go_to = session[:go_to_after_edit] || user_path(@user)
+    session[:go_to_after_edit] = nil
     remove_password_fields_if_blank! params[:user]
     
     if params[:user][:image] && params[:user][:remove_image] != '1'
       update! { crop_user_path }
     else
-      update! { return_path(user_path) }
+      update! { go_to }
     end
    end
    
