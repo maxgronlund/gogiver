@@ -6,7 +6,8 @@ class UsersController < InheritedResources::Base
   uses_tiny_mce :only => [:new, :create, :edit, :update]
   
   def index
-    return_path users_path # !!! same as line 10?
+    session[:go_to_after_edit] = users_path
+#    return_path users_path # !!! same as line 10?
 #    @is_first_user = User.first.id == 1
 #    session[:go_to_after_edit] = users_path
     @users = User.search(params[:search]).order(sort_column + " " + sort_direction).page(params[:page]).per(25)
@@ -21,6 +22,7 @@ class UsersController < InheritedResources::Base
   end
   
   def edit
+
     @helps = Help.edit_profile  || 'na'
     edit!
   end
@@ -57,7 +59,9 @@ class UsersController < InheritedResources::Base
     @user.crop_version = params[:user]["crop_version"]
     @user.save
 
-    redirect_to return_path(edit_user_path(@user))
+    go_to = session[:go_to_after_edit] || user_path(@user)
+    session[:go_to_after_edit] = nil
+    redirect_to go_to
   end
   
   def update
@@ -80,15 +84,15 @@ private
     end
   end
 
-  def return_path=(path)
-    session[:go_to_after_edit] = path
-  end
-
-  def return_path(default_path)
-    (session[:go_to_after_edit] || default_path).tap do |path|
-      session[:go_to_after_edit] = nil
-    end
-  end
+#  def return_path=(path)
+#    session[:go_to_after_edit] = path
+#  end
+#
+#  def return_path(default_path)
+#    (session[:go_to_after_edit] || default_path).tap do |path|
+#      session[:go_to_after_edit] = nil
+#    end
+#  end
 
   def sort_column  
     User.column_names.include?(params[:sort]) ? params[:sort] : "name"  
