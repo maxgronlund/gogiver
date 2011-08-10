@@ -1,0 +1,13 @@
+= form_for @visionboard do |f|
+  -if @visionboard.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@visionboard.errors.count, "error")} prohibited this visionboard from being saved:"
+      ul
+        - @visionboard.errors.full_messages.each do |msg|
+          li= msg
+
+  .field
+    = f.label :user
+    = f.text_field :user
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,19 @@
+h1 Listing visionboards
+
+table
+  tr
+    th User
+    th
+    th
+    th
+
+  - @visionboards.each do |visionboard|
+    tr
+      td= visionboard.user
+      td= link_to 'Show', visionboard
+      td= link_to 'Edit', edit_visionboard_path(visionboard)
+      td= link_to 'Destroy', visionboard, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Visionboard', new_visionboard_path

@@ -1,6 +1,8 @@
 Gogiver::Application.routes.draw do
 
 
+  resources :visionboards
+
   resources :helps
   resources :actions
   resources :goals

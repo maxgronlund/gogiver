@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  b User:
+  = @visionboard.user
+
+= link_to 'Edit', edit_visionboard_path(@visionboard)
+'|
+= link_to 'Back', visionboards_path

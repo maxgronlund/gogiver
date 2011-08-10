@@ -35,5 +35,7 @@ rails generate scaffold help title:string body:text user:belongs_to
 
 rails g migration add_life_purpose_to_users life_purpose:text
 
+rails g scaffold visionboard user:belongs_to
+
 
 
