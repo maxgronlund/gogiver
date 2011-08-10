@@ -1,7 +1,7 @@
 .banner
 
   .grid-9.alpha
-      = image_tag 'share_and_grow-1.png'
+      = link_to image_tag('share_and_grow-1.png'), root_path
   .grid-3.omega
     .edit
       - if user_signed_in?
@@ -17,4 +17,6 @@
       - if can_edit?
         '&nbsp|&nbsp;
         = link_to 'admin', admin_index_path
+
+.grid-12.top-margin-big
     
