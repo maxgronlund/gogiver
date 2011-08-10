@@ -77,7 +77,7 @@ class UsersController < InheritedResources::Base
       update! { go_to }
     end
    end
-   
+
   
 private
 
