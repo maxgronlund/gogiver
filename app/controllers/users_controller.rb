@@ -25,7 +25,7 @@ class UsersController < InheritedResources::Base
   
   def edit
 
-    @helps = Help.edit_profile  || 'na'
+    #@helps = Help.edit_profile  || 'na'
     edit!
   end
   
@@ -105,6 +105,6 @@ private
   end
   
   def get_helps
-    @helps = Help.profile
+    @helps = Help.edit_profile  || 'na'
   end
 end
