@@ -1,15 +1,16 @@
 # RVM bootstrap
 $:.unshift(File.expand_path("~/.rvm/lib"))
 require 'rvm/capistrano'
-set :rvm_ruby_string, '1.9.2-p136'
-set :rvm_type, :user
+set :rvm_ruby_string, '1.9.2-p180'
+#set :rvm_type, :user
+set :rvm_bin_path, "/usr/local/rvm/bin"
 
 # bundler bootstrap
 require 'bundler/capistrano'
 
 # main details
-set :application, "gogiver"                                       # <<< change name
-server "46.4.64.81", :app, :web, :db, :primary => true
+set :application, "gogiver"                           # <<< change name
+server "46.4.121.11", :app, :web, :db, :primary => true
 
 # server details
 default_run_options[:pty] = true
@@ -48,16 +49,3 @@ namespace :deploy do
 end
 
 after 'deploy:update_code', 'deploy:symlink_shared'
-
-
-desc "Tail all or a single remote file"
-task :tail do
-  ENV["LOGFILE"] ||= "*.log"
-  run "tail -f #{shared_path}/log/#{ENV["LOGFILE"]}" do |channel, stream, data|
-    puts "#{data}"
-    break if stream == :err
-  end
-end
-
-
-
