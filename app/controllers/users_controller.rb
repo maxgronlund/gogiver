@@ -5,6 +5,8 @@ class UsersController < InheritedResources::Base
   helper_method :sort_column, :sort_direction
   uses_tiny_mce :only => [:new, :create, :edit, :update]
   
+  before_filter :get_helps
+  
   def index
     session[:go_to_after_edit] = users_path
 #    return_path users_path # !!! same as line 10?
@@ -16,7 +18,7 @@ class UsersController < InheritedResources::Base
 
   def show
     session[:go_to_after_edit] = user_path(@user)
-    @helps = Help.profile
+    
     
     show!
   end
@@ -100,5 +102,9 @@ private
 
   def sort_direction  
     %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"  
+  end
+  
+  def get_helps
+    @helps = Help.profile
   end
 end
