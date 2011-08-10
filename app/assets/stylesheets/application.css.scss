@@ -24,6 +24,7 @@ body{
 
   margin:0px;
   @include font-plain;
+  color:$text-color;
 
 
 }
@@ -182,6 +183,26 @@ h1, h2, h3, h4, h5, h6{
 	.message{
 	  margin:8px;
 	}
+}
+
+.orange{
+	color:$color_orange;
+	display:inline;
+	font-weight:bold;
+	font-size: 13px;
+	line-height:30px;
+}
+
+.normal{
+	color:$text-color;
+	display:inline;
+	font-weight:normal;
+	font-size: 13px;
+	line-height:30px;
+}
+
+.top-margin-big{
+	margin-top:50px;
 }
 
 
