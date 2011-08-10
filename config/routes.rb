@@ -1,6 +1,8 @@
 Gogiver::Application.routes.draw do
 
 
+  get "intro_video/index"
+
   resources :visionboards
 
   resources :helps
